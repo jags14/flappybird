@@ -32,6 +32,9 @@ var mainState = {
         var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         spaceKey.onDown.add(this.jump, this); 
 
+        game.stage.inputEnabled = true;
+        game.stage.events.onInputDown.add(this.jump, this);
+
         // Create a group of 20 pipes
         this.pipes = game.add.group();
         this.pipes.enableBody = true;
